@@ -1,6 +1,6 @@
 # react-native-zoomed
 
-Verify if display is zoomed
+Detects if the device screen is in zoomed mode
 
 ## Installation
 
@@ -8,14 +8,17 @@ Verify if display is zoomed
 npm install react-native-zoomed
 ```
 
+```sh
+yarn add react-native-zoomed-display 
+```
 ## Usage
 
 ```js
-import { multiply } from 'react-native-zoomed';
+import { isDisplayZoomed } from 'react-native-zoomed';
 
 // ...
 
-const result = await multiply(3, 7);
+const isZoomed = isDisplayZoomed());
 ```
 
 ## Contributing
