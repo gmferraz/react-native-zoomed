@@ -14,11 +14,16 @@ yarn add react-native-zoomed-display
 ## Usage
 
 ```js
-import { isDisplayZoomed } from 'react-native-zoomed';
+import { isDisplayZoomed, useIsZoomed } from 'react-native-zoomed';
 
 // ...
 
 const isZoomed = isDisplayZoomed());
+
+// or
+
+const isZoomed = useIsZoomed());
+
 ```
 
 ## Contributing
