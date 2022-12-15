@@ -1,14 +1,19 @@
-#import <React/RCTBridgeModule.h>
+#import <Foundation/Foundation.h>
+#import "React/RCTBridgeModule.h"
+#import "Zoomed.h"
 
-@interface RCT_EXTERN_MODULE(Zoomed, NSObject)
+@implementation ZoomedTeste
 
-RCT_EXTERN_METHOD(multiply:(float)a withB:(float)b
-                 withResolver:(RCTPromiseResolveBlock)resolve
-                 withRejecter:(RCTPromiseRejectBlock)reject)
+RCT_EXPORT_MODULE();
 
 + (BOOL)requiresMainQueueSetup
 {
-  return NO;
+   return YES;
+}
+
+- (NSDictionary *)constantsToExport
+{
+  return @{ @"isZoomed": @([UIScreen mainScreen].scale != [UIScreen mainScreen].nativeScale) };
 }
 
 @end

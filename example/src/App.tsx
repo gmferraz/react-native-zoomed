@@ -1,18 +1,12 @@
 import * as React from 'react';
-
 import { StyleSheet, View, Text } from 'react-native';
-import { multiply } from 'react-native-zoomed';
+import { isDisplayZoomed } from 'react-native-zoomed';
 
 export default function App() {
-  const [result, setResult] = React.useState<number | undefined>();
-
-  React.useEffect(() => {
-    multiply(3, 7).then(setResult);
-  }, []);
-
+  const isZoomed = isDisplayZoomed();
   return (
     <View style={styles.container}>
-      <Text>Result: {result}</Text>
+      {<Text>Is zoomed: {String(isZoomed)}</Text>}
     </View>
   );
 }
